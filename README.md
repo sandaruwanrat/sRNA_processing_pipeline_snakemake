@@ -1,22 +1,20 @@
-# smallRNA_seq_proccessing_pipeline
 
-## This pipeline process raw smallRNA raw reads and produce bam files
+# This pipeline process raw smallRNA raw reads and produce bam files
 
 
 ```text
 Raw FASTQ files
        ↓
-Raw reads QC (FastQC/MultiQC)
+Raw reads QC (FastQC & MultiQC)
        ↓
-Adapter & quality trimming (cutadapt/fastp)
+Adapter & quality trimming (fastp)
        ↓
-Bowtie mapping (genome/piRNA clusters)
+Bowtie mapping (genome + transgenes used in the lab)
        ↓
-Size selection (15–40 nt)
+Size selection (18–30 nt)
        ↓
-Remove rRNA/tRNA/snRNA/... (sortmerna or bowtie filter)
+Remove rRNA/tRNA
        ↓
 ShortStack
-(run locus discovery, annotation, quantification)
        ↓
-Final clean BAM files
+Final BAM files
